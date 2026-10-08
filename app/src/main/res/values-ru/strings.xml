@@ -1564,4 +1564,13 @@
     <string name="split_volume_size">Размер тома</string>
     <string name="split_volume_none">Один файл</string>
     <string name="split_volume_append_unsupported">Разбиение на тома не поддерживает добавление в существующий архив</string>
+
+    <!-- Сравнение двоичных файлов и DEX -->
+    <string name="compare_dex">Сравнить DEX</string>
+    <string name="compare_files">Сравнить файлы</string>
+    <string name="compare_size_delta">Разница в размере (справа минус слева):</string>
+    <string name="compare_bytes_differing">Отличающихся байт:</string>
+    <string name="compare_first_difference">Первое отличие по адресу</string>
+    <string name="compare_truncated">Найдены и другие отличия, они не показаны.</string>
+    <string name="compare_files_failed">Не удалось сравнить</string>
 </resources>

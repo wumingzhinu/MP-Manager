@@ -36,6 +36,8 @@ public final class FileMenuOrder {
     public static final String CMP_TEXT = "cmp_text";
     public static final String CMP_HASH = "cmp_hash";
     public static final String CMP_APK = "cmp_apk";
+    public static final String CMP_DEX = "cmp_dex";
+    public static final String CMP_FILE = "cmp_file";
     public static final String TOOLS = "file_tools";
     public static final String BATCH_CROP = "batch_crop";
     public static final String BATCH_EXIF = "batch_exif";
@@ -44,7 +46,7 @@ public final class FileMenuOrder {
     public static final String[] DEFAULT_ORDER = {
             COPY, MOVE, RENAME, DELETE, COMPRESS, PROPERTIES, SHARE, OPEN_WITH,
             BOOKMARK, CMD, CHECK, EXTRACT, BATCH_SIGN, BATCH_OPT, BATCH_INSTALL,
-            CMP_ZIP, CMP_ARSC, CMP_TEXT, CMP_HASH, CMP_APK,
+            CMP_ZIP, CMP_ARSC, CMP_TEXT, CMP_HASH, CMP_APK, CMP_DEX, CMP_FILE,
             BATCH_CROP, BATCH_EXIF, BATCH_STRIP_META
     };
 
@@ -149,6 +151,8 @@ public final class FileMenuOrder {
             case CMP_TEXT -> context.getString(R.string.compare_text);
             case CMP_HASH -> context.getString(R.string.compare_hashes);
             case CMP_APK -> context.getString(R.string.compare_apks);
+            case CMP_DEX -> context.getString(R.string.compare_dex);
+            case CMP_FILE -> context.getString(R.string.compare_files);
             case TOOLS -> context.getString(R.string.file_tools);
             case BATCH_CROP -> context.getString(R.string.crop_images);
             case BATCH_EXIF -> context.getString(R.string.set_exif_tags);
@@ -187,7 +191,7 @@ public final class FileMenuOrder {
             case BATCH_SIGN, BATCH_OPT, BATCH_INSTALL -> R.drawable.apk_document_24px;
             case EXTRACT -> R.drawable.baseline_compress_24;
             case CMP_ZIP, CMP_ARSC -> R.drawable.baseline_swap_horiz_24;
-            case CMP_TEXT, CMP_HASH, CMP_APK -> R.drawable.baseline_swap_horiz_24;
+            case CMP_TEXT, CMP_HASH, CMP_APK, CMP_DEX, CMP_FILE -> R.drawable.baseline_swap_horiz_24;
             case TOOLS -> R.drawable.tools_24px;
             case BATCH_CROP -> R.drawable.edit_24px;
             case BATCH_EXIF -> R.drawable.baseline_text_snippet_24;

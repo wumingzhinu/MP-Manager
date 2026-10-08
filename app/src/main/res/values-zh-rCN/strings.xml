@@ -2026,4 +2026,13 @@ Layout Inspector
     <string name="split_volume_size">分卷大小</string>
     <string name="split_volume_none">不分卷（单文件）</string>
     <string name="split_volume_append_unsupported">分卷压缩无法添加到已存在的压缩包</string>
+
+    <!-- 二进制 / DEX 对比 -->
+    <string name="compare_dex">对比 DEX</string>
+    <string name="compare_files">对比文件</string>
+    <string name="compare_size_delta">大小差（右 - 左）：</string>
+    <string name="compare_bytes_differing">不同的字节数：</string>
+    <string name="compare_first_difference">首个差异位置</string>
+    <string name="compare_truncated">还存在更多差异，未全部列出。</string>
+    <string name="compare_files_failed">对比失败</string>
 </resources>

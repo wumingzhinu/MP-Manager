@@ -2029,4 +2029,13 @@ Deleted %2$s · %3$s</string>
     <string name="split_volume_size">Split volume size</string>
     <string name="split_volume_none">Single file</string>
     <string name="split_volume_append_unsupported">Split volumes cannot be added to an existing archive</string>
+
+    <!-- Binary / DEX comparison -->
+    <string name="compare_dex">Compare DEX</string>
+    <string name="compare_files">Compare files</string>
+    <string name="compare_size_delta">Size delta (right - left):</string>
+    <string name="compare_bytes_differing">Differing bytes:</string>
+    <string name="compare_first_difference">First difference at</string>
+    <string name="compare_truncated">More differences were found but are not listed.</string>
+    <string name="compare_files_failed">Compare failed</string>
 </resources>
