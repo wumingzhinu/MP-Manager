@@ -1573,4 +1573,13 @@
     <string name="compare_first_difference">Первое отличие по адресу</string>
     <string name="compare_truncated">Найдены и другие отличия, они не показаны.</string>
     <string name="compare_files_failed">Не удалось сравнить</string>
+    <!-- Глобальное переименование DEX -->
+    <string name="dex_global_rename">Глобальное переименование DEX</string>
+    <string name="dex_global_rename_desc">По одному правилу в строке: «pkg &lt;поиск&gt; &lt;замена&gt;», «type Lcom/a/A; Lcom/b/A;», «field Lcom/a/A;-&gt;name:I новоеИмя» или «method Lcom/a/A;-&gt;name()V новоеИмя». Четвёртое слово exact оставляет подпакеты без изменений. Строки с # игнорируются.</string>
+    <string name="dex_global_rename_hint">pkg com.example com.acme\ntype Lcom/example/A; Lcom/acme/A;\nfield Lcom/example/A;-&gt;count:I total</string>
+    <string name="dex_global_rename_inner">Также переименовать вложенные классы</string>
+    <string name="dex_global_rename_access">Исправлять видимость членов после переименования</string>
+    <string name="dex_global_rename_bad_script">Нет пригодных правил переименования</string>
+    <string name="dex_global_rename_done">Переименовано элементов: %1$d</string>
+    <string name="dex_global_rename_none">Ничего не переименовано</string>
 </resources>
