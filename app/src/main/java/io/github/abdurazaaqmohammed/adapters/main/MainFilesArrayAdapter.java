@@ -97,10 +97,13 @@ import io.github.abdurazaaqmohammed.ui.activities.CompareTextActivity;
 import io.github.abdurazaaqmohammed.ui.activities.HexEditorActivity;
 import io.github.abdurazaaqmohammed.ui.activities.TextEditorActivity;
 import io.github.abdurazaaqmohammed.ui.dialogs.CompareArscDialog;
+import io.github.abdurazaaqmohammed.ui.dialogs.CompareDexDialog;
+import io.github.abdurazaaqmohammed.ui.dialogs.CompareFileDialog;
 import io.github.abdurazaaqmohammed.ui.dialogs.CompareZipDialog;
 import io.github.abdurazaaqmohammed.utils.AccessManager;
 import io.github.abdurazaaqmohammed.utils.ArchiveUtil;
 import io.github.abdurazaaqmohammed.utils.ColorUtil;
+import io.github.abdurazaaqmohammed.utils.DexCompareUtil;
 import io.github.abdurazaaqmohammed.utils.DialogUtil;
 import io.github.abdurazaaqmohammed.utils.ErrorUtil;
 import io.github.abdurazaaqmohammed.utils.FileListExporter;
@@ -525,6 +528,14 @@ public class MainFilesArrayAdapter extends RecyclerView.Adapter<MainFilesArrayAd
                         if (ext1.equals("apk") && ext2.equals("apk")
                                 && compareFile1 instanceof File && compareFile2 instanceof File)
                             visibleMenu.add(new FileMenuOrder.MenuItem(FileMenuOrder.CMP_APK, FileMenuOrder.labelFor(context, FileMenuOrder.CMP_APK, direction)));
+                        // DEX: bare .dex files, or two archives whose dex files are worth diffing.
+                        if (DexCompareUtil.isComparableName(name1) && DexCompareUtil.isComparableName(name2)
+                                && compareFile1 instanceof File && compareFile2 instanceof File)
+                            visibleMenu.add(new FileMenuOrder.MenuItem(FileMenuOrder.CMP_DEX, FileMenuOrder.labelFor(context, FileMenuOrder.CMP_DEX, direction)));
+                        // Byte-level diff of any two real files, binary content included.
+                        if (!multi && compareFile1 instanceof File f1 && compareFile2 instanceof File f2
+                                && !f1.isDirectory() && !f2.isDirectory())
+                            visibleMenu.add(new FileMenuOrder.MenuItem(FileMenuOrder.CMP_FILE, FileMenuOrder.labelFor(context, FileMenuOrder.CMP_FILE, direction)));
                     }
                 }
 
@@ -695,6 +706,16 @@ public class MainFilesArrayAdapter extends RecyclerView.Adapter<MainFilesArrayAd
                                 return;
                             case FileMenuOrder.CMP_APK:
                                 apkTools.showCompareApksDialog((File) finalCompareFile1, (File) finalCompareFile2);
+                                return;
+                            case FileMenuOrder.CMP_DEX:
+                                new CompareDexDialog(context,
+                                        (File) finalCompareFile1,
+                                        (File) finalCompareFile2).show();
+                                return;
+                            case FileMenuOrder.CMP_FILE:
+                                new CompareFileDialog(context,
+                                        (File) finalCompareFile1,
+                                        (File) finalCompareFile2).show();
                                 return;
                             case FileMenuOrder.BATCH_SIGN: {
                                 List<File> apks = new ArrayList<>();
